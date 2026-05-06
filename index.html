@@ -230,6 +230,11 @@
         .img-fleet { background-image: url('./images/fleet_realistic_1777925741235.png'); }
         .img-machinery { background-image: url('./images/machinery_realistic_1777925814244.png'); }
         .img-cold { background-image: url('./images/cold_realistic_1777925830782.png'); }
+        .img-video { background-image: url('./images/video_monitoring.png'); }
+        .img-solar { background-image: url('./images/solar_gps.png'); }
+        .img-thirdeye { background-image: url('./images/third_eye.png'); }
+        .img-vtrack { background-image: url('./images/vtrack.png'); }
+        .img-fuel-rod { background-image: url('./images/fuel_sensor.png'); }
 
         .service-content {
             padding: 2rem;
@@ -612,6 +617,51 @@
                         </div>
                     </div>
 
+                    <div class="service-card">
+                        <div class="service-image img-video" role="img" aria-label="Monitoreo por video"></div>
+                        <div class="service-content">
+                            <h3>Monitoreo por Video</h3>
+                            <p>Seguridad total con transmisión en tiempo real y grabación en la nube. Supervisa el comportamiento del conductor y el entorno del vehículo de forma remota.</p>
+                            <button data-modal-target="modal-video" class="service-link">Leer Detalles →</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image img-solar" role="img" aria-label="GPS Solar"></div>
+                        <div class="service-content">
+                            <h3>GPS Solar</h3>
+                            <p>Localización autónoma para activos sin fuente de poder propia como contenedores y remolques. Energía infinita con paneles solares integrados.</p>
+                            <button data-modal-target="modal-solar" class="service-link">Leer Detalles →</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image img-thirdeye" role="img" aria-label="Tercer Ojo"></div>
+                        <div class="service-content">
+                            <h3>Tercer Ojo</h3>
+                            <p>Sistema avanzado de asistencia (ADAS) que detecta puntos ciegos y previene colisiones mediante alertas visuales y sonoras en tiempo real.</p>
+                            <button data-modal-target="modal-thirdeye" class="service-link">Leer Detalles →</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image img-vtrack" role="img" aria-label="V-Track"></div>
+                        <div class="service-content">
+                            <h3>V-Track: Asistencia</h3>
+                            <p>Gestión inteligente de asistencia y jornadas laborales electrónicas. Optimiza el cumplimiento normativo y la productividad de tu equipo de trabajo.</p>
+                            <a href="https://v-track.cl" target="_blank" rel="noopener noreferrer" class="service-link" style="text-decoration:none; display:inline-block; margin-top:auto;">Visitar V-Track.cl →</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image img-fuel-rod" role="img" aria-label="Sensor de combustible"></div>
+                        <div class="service-content">
+                            <h3>Sensor de Combustible</h3>
+                            <p>Medición de alta precisión mediante varillas capacitivas. Controla cada litro y evita extracciones no autorizadas con reportes detallados y alertas.</p>
+                            <button data-modal-target="modal-combustible" class="service-link">Leer Detalles →</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -865,6 +915,70 @@
                     <li><strong>Reportes Certificados:</strong> Gráficos históricos de temperatura.</li>
                 </ul>
                 <button class="btn-client" style="margin-top:1rem;" onclick="location.href='#contacto'; document.getElementById('modal-frio').classList.remove('active');">Solicitar Cotización</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-video" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <h3>Monitoreo por Video</h3>
+                <p>Nuestra solución de video vigilancia (Dashcam) permite una supervisión total de lo que sucede dentro y fuera de la cabina.</p>
+                <ul>
+                    <li><strong>Transmisión en Vivo:</strong> Acceso a video en tiempo real desde la plataforma.</li>
+                    <li><strong>Grabación de Eventos:</strong> Captura automática ante frenados bruscos o impactos.</li>
+                    <li><strong>Evidencia Digital:</strong> Respaldo crítico para seguros e investigaciones.</li>
+                </ul>
+                <button class="btn-client" style="margin-top:1rem;" onclick="location.href='#contacto'; document.getElementById('modal-video').classList.remove('active');">Solicitar Cotización</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-solar" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <h3>GPS Solar</h3>
+                <p>Equipos diseñados para activos que no cuentan con fuente de alimentación eléctrica permanente.</p>
+                <ul>
+                    <li><strong>Autonomía Total:</strong> Panel solar integrado de alta eficiencia.</li>
+                    <li><strong>Resistencia Extrema:</strong> Certificación IP67 contra agua y polvo.</li>
+                    <li><strong>Ideal para Activos Críticos:</strong> Contenedores, vagones y remolques.</li>
+                </ul>
+                <button class="btn-client" style="margin-top:1rem;" onclick="location.href='#contacto'; document.getElementById('modal-solar').classList.remove('active');">Solicitar Cotización</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-thirdeye" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <h3>Tercer Ojo (ADAS)</h3>
+                <p>Tecnología preventiva que actúa como un copiloto inteligente para tus conductores.</p>
+                <ul>
+                    <li><strong>Detección de Fatiga:</strong> Alertas ante bostezo o distracción del conductor.</li>
+                    <li><strong>Puntos Ciegos:</strong> Monitoreo lateral para evitar colisiones en giros.</li>
+                    <li><strong>Advertencia de Colisión:</strong> Alertas de proximidad con vehículos u objetos.</li>
+                </ul>
+                <button class="btn-client" style="margin-top:1rem;" onclick="location.href='#contacto'; document.getElementById('modal-thirdeye').classList.remove('active');">Solicitar Cotización</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-combustible" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <h3>Sensor de Combustible (Varilla)</h3>
+                <p>La solución más precisa del mercado para el control de combustible en tanques de gran capacidad.</p>
+                <ul>
+                    <li><strong>Precisión del 99%:</strong> Medición exacta del nivel de diesel o gasolina.</li>
+                    <li><strong>Detección de Cargas/Drenajes:</strong> Alertas inmediatas ante variaciones bruscas.</li>
+                    <li><strong>Gráficos Detallados:</strong> Análisis histórico de consumo por kilómetro o por hora.</li>
+                </ul>
+                <button class="btn-client" style="margin-top:1rem;" onclick="location.href='#contacto'; document.getElementById('modal-combustible').classList.remove('active');">Solicitar Cotización</button>
             </div>
         </div>
     </div>

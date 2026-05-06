@@ -193,7 +193,7 @@
 
         /* Services Section */
         .services-section {
-            padding: 6rem 0;
+            padding: 3rem 0;
             background-color: var(--bg-white);
         }
 
@@ -352,66 +352,72 @@
             border-left: 10px solid var(--primary-color);
         }
 
-        /* New Platform Section Styles */
+        /* Platform Features - Compact Grid */
         .platform-section {
-            padding: 8rem 0;
+            padding: 3rem 0;
             background-color: var(--bg-white);
-            overflow: hidden;
         }
 
-        .feature-row {
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon-container {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6rem;
-            margin-bottom: 10rem;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+            background: var(--bg-light-gray);
+            border-radius: 50%;
+            padding: 1rem;
         }
 
-        .feature-row.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .feature-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
-        .feature-row:nth-child(even) {
-            flex-direction: row-reverse;
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
         }
 
-        .feature-image {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .feature-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            transition: transform 0.5s ease;
-        }
-
-        .feature-image img:hover {
-            transform: scale(1.03);
-        }
-
-        .feature-text {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .feature-text h3 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .feature-text p {
-            font-size: 1.1rem;
+        .feature-card p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.8;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
         }
 
         /* Footer & Contact Form */
@@ -669,177 +675,126 @@
             </div>
         </section>
 
-        <!-- Platform Features Overhauled -->
+        <!-- Platform Features - Compact Grid -->
         <section id="plataforma" class="platform-section">
             <div class="container">
-                
-                <!-- 1. Seguimiento en tiempo real -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_tracking.png" alt="Seguimiento en tiempo real"></div>
-                    <div class="feature-text">
+                <h2 class="section-title" style="margin-bottom: 4rem;">Cualidades de nuestra Plataforma</h2>
+                <div class="features-grid">
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_tracking.png" alt="Seguimiento"></div>
                         <h3>Seguimiento en tiempo real</h3>
-                        <p>El modo de seguimiento en tiempo real muestra datos en directo de los objetos rastreados. La información se actualiza cada diez segundos sin necesidad de recargar la página ni volver a iniciar sesión. Los datos monitorizados incluyen el estado del vehículo, latitud, longitud, altitud, dirección, velocidad, consumo de combustible, datos de los sensores y mucho más.</p>
+                        <p>Datos en directo cada diez segundos. Estado del vehículo, velocidad, sensores y ubicación precisa sin recargar la página.</p>
                     </div>
-                </div>
 
-                <!-- 2. Panel -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_dashboard.png" alt="Panel de control"></div>
-                    <div class="feature-text">
-                        <h3>Panel</h3>
-                        <p>El panel de control es una herramienta de gestión de información que permite visualizar, analizar y mostrar datos importantes de la cuenta de seguimiento. Es una herramienta eficiente para supervisar objetos, eventos, mantenimiento, tareas y kilometraje desde una ubicación centralizada.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_dashboard.png" alt="Panel"></div>
+                        <h3>Panel de Control</h3>
+                        <p>Visualice, analice y gestione toda la información crítica de su cuenta (eventos, tareas, kilometraje) desde una ubicación central.</p>
                     </div>
-                </div>
 
-                <!-- 3. Widgets -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_widgets.png" alt="Widgets interactivos"></div>
-                    <div class="feature-text">
-                        <h3>Widgets</h3>
-                        <p>Los widgets muestran información reciente sobre los objetos, la cual se actualiza cada diez segundos. Permiten enviar comandos para controlar el dispositivo, ver eventos recientes y el gráfico de kilometraje sin necesidad de recargar la página web.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_widgets.png" alt="Widgets"></div>
+                        <h3>Widgets Interactivos</h3>
+                        <p>Información reciente actualizada cada diez segundos. Envíe comandos y vea gráficos de kilometraje al instante.</p>
                     </div>
-                </div>
 
-                <!-- 4. Sensores -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_sensors.png" alt="Control de sensores"></div>
-                    <div class="feature-text">
-                        <h3>Sensores</h3>
-                        <p>Amplíe las capacidades de seguimiento GPS leyendo datos del ordenador de a bordo mediante CAN u obtenga lecturas de sensores externos. Supervise el nivel de combustible, RPM, temperatura, voltaje, iButton, RFID y más con mediciones precisas calibradas.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_sensors.png" alt="Sensores"></div>
+                        <h3>Control de Sensores</h3>
+                        <p>Lectura de datos CAN, nivel de combustible, temperatura, iButton y RFID con mediciones precisas calibradas.</p>
                     </div>
-                </div>
 
-                <!-- 5. Eventos -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_events.png" alt="Gestión de eventos"></div>
-                    <div class="feature-text">
-                        <h3>Eventos</h3>
-                        <p>Active acciones ante actividades disruptivas. Reciba notificaciones instantáneas por SMS, correo electrónico o push ante diferentes tipos de eventos, permitiéndole reaccionar de inmediato ante cualquier situación crítica.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_events.png" alt="Eventos"></div>
+                        <h3>Gestión de Eventos</h3>
+                        <p>Notificaciones instantáneas por SMS, correo o push ante actividades críticas para una reacción inmediata.</p>
                     </div>
-                </div>
 
-                <!-- 6. Historia -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_history.png" alt="Historial de datos"></div>
-                    <div class="feature-text">
-                        <h3>Historial</h3>
-                        <p>El historial muestra todos los datos almacenados recopilados de los dispositivos durante un período seleccionado: velocidad, ubicación, paradas, informes y eventos. Se puede visualizar en el mapa, en gráficos o exportar en formatos HTML/XLS.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_history.png" alt="Historial"></div>
+                        <h3>Historial Detallado</h3>
+                        <p>Visualice paradas, informes y rutas históricas en el mapa o expórtelos en formatos HTML y XLS.</p>
                     </div>
-                </div>
 
-                <!-- 7. Puntos de interés (POI) -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_poi.png" alt="Puntos de Interés"></div>
-                    <div class="feature-text">
-                        <h3>Puntos de interés (POI)</h3>
-                        <p>Marque lugares interesantes o útiles en el mapa. Añada nombres, descripciones breves, adjunte imágenes o vídeos para identificar ubicaciones clave para su operación logística.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_poi.png" alt="POI"></div>
+                        <h3>Puntos de Interés (POI)</h3>
+                        <p>Marque ubicaciones clave con nombres, fotos y descripciones para identificar sus bases logísticas.</p>
                     </div>
-                </div>
 
-                <!-- 8. Rutas -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_routes.png" alt="Control de Rutas"></div>
-                    <div class="feature-text">
-                        <h3>Rutas</h3>
-                        <p>Dibuje recorridos virtuales en el mapa y reciba notificaciones si el vehículo se encuentra dentro o fuera de la ruta establecida. Herramienta fundamental para analizar la adherencia a las rutas planificadas.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_routes.png" alt="Rutas"></div>
+                        <h3>Control de Rutas</h3>
+                        <p>Dibuje recorridos virtuales y reciba alertas ante desviaciones de la ruta planificada.</p>
                     </div>
-                </div>
 
-                <!-- 9. Geocercas -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_geofences.png" alt="Geocercas virtuales"></div>
-                    <div class="feature-text">
-                        <h3>Geocercas</h3>
-                        <p>Cree perímetros virtuales en áreas geográficas de interés. Controle si la unidad permanece dentro o sale del área delimitada con notificaciones automáticas instantáneas.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_geofences.png" alt="Geocercas"></div>
+                        <h3>Geocercas Virtuales</h3>
+                        <p>Cree perímetros geográficos y controle entradas o salidas de áreas de interés con alertas automáticas.</p>
                     </div>
-                </div>
 
-                <!-- 10. Informes -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_reports.png" alt="Informes detallados"></div>
-                    <div class="feature-text">
-                        <h3>Informes</h3>
-                        <p>Obtenga informes detallados sobre viajes, kilometraje, comportamiento al volante, consumo de combustible y robos. Exportables a HTML, PDF o XLS, o programables para envío automático por correo electrónico.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_reports.png" alt="Informes"></div>
+                        <h3>Informes Avanzados</h3>
+                        <p>Reportes detallados de viajes, consumo y comportamiento al volante programables para envío automático.</p>
                     </div>
-                </div>
 
-                <!-- 11. Tareas -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_maintenance.png" alt="Gestión de Tareas"></div>
-                    <div class="feature-text">
-                        <h3>Tareas</h3>
-                        <p>Facilitan la creación y gestión de entradas relacionadas con el trabajo pendiente. Permiten establecer direcciones de inicio/fin, prioridad y estado, gestionables directamente desde la aplicación móvil.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_maintenance.png" alt="Tareas"></div>
+                        <h3>Gestión de Tareas</h3>
+                        <p>Administre trabajos pendientes con direcciones, prioridades y estados desde la aplicación móvil.</p>
                     </div>
-                </div>
 
-                <!-- 12. Cuaderno -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_logbook.png" alt="Libro de registro"></div>
-                    <div class="feature-text">
-                        <h3>Libro de registro</h3>
-                        <p>El libro de registro contiene la información recibida de dispositivos RFID e iButton. Gestione cambios de conductores, remolques y pasajeros con datos cargables y exportables para análisis detallado.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_logbook.png" alt="Registro"></div>
+                        <h3>Libro de Registro</h3>
+                        <p>Control de cambios de conductores, remolques y pasajeros mediante tecnología RFID e iButton.</p>
                     </div>
-                </div>
 
-                <!-- 13. Códigos de diagnóstico (DTC) -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_dtc.png" alt="Diagnóstico vehicular"></div>
-                    <div class="feature-text">
-                        <h3>Códigos de diagnóstico de averías (DTC)</h3>
-                        <p>Visualice códigos de error recibidos mediante dispositivos compatibles con OBD. Determine el tipo de avería del vehículo de forma remota sin necesidad de inspección física inicial.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_dtc.png" alt="DTC"></div>
+                        <h3>Diagnóstico (DTC)</h3>
+                        <p>Visualice códigos de error OBD de forma remota para determinar averías sin inspección física inicial.</p>
                     </div>
-                </div>
 
-                <!-- 14. Mantenimiento -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_maintenance.png" alt="Mantenimiento preventivo"></div>
-                    <div class="feature-text">
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_maintenance.png" alt="Mantenimiento"></div>
                         <h3>Mantenimiento</h3>
-                        <p>Recordatorios automáticos para servicios de rutina como cambios de aceite, inspecciones técnicas o renovación de seguros. Mantenga su flota en óptimas condiciones operativas.</p>
+                        <p>Recordatorios para cambios de aceite, inspecciones y seguros para mantener su flota operativa.</p>
                     </div>
-                </div>
 
-                <!-- 15. Gastos -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_expenses.png" alt="Gestión de gastos"></div>
-                    <div class="feature-text">
-                        <h3>Gastos</h3>
-                        <p>Registre y evalúe el importe invertido en el mantenimiento de cada objeto. Analice el beneficio económico del uso del vehículo con informes de gastos diarios, semanales o mensuales.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_expenses.png" alt="Gastos"></div>
+                        <h3>Gestión de Gastos</h3>
+                        <p>Evalúe la inversión en mantenimiento y analice el beneficio económico por objeto de seguimiento.</p>
                     </div>
-                </div>
 
-                <!-- 16. Control de objetos -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_control.png" alt="Control remoto de objetos"></div>
-                    <div class="feature-text">
-                        <h3>Control de objetos</h3>
-                        <p>Control remoto mediante comandos GPRS/SMS. Permite acciones críticas como el apagado/encendido del motor y otras funciones de seguridad de forma remota desde la plataforma.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_control.png" alt="Control"></div>
+                        <h3>Control Remoto</h3>
+                        <p>Comandos GPRS/SMS para acciones críticas como el apagado de motor remoto ante robos.</p>
                     </div>
-                </div>
 
-                <!-- 17. Galería -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_gallery.png" alt="Galería de multimedia"></div>
-                    <div class="feature-text">
-                        <h3>Galería de imágenes y vídeos</h3>
-                        <p>Almacene capturas enviadas por cámaras conectadas o smartphones. Vital para la investigación de accidentes, verificación de carga y seguridad del conductor.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_gallery.png" alt="Galería"></div>
+                        <h3>Galería Multimedia</h3>
+                        <p>Almacene imágenes y vídeos enviados por cámaras o smartphones para verificación de carga y eventos.</p>
                     </div>
-                </div>
 
-                <!-- 18. API -->
-                <div class="feature-row">
-                    <div class="feature-image"><img src="./images/feat_api.png" alt="API de Integración"></div>
-                    <div class="feature-text">
-                        <h3>API</h3>
-                        <p>La API HTTP permite obtener y establecer datos para el desarrollo de aplicaciones de terceros. Integre datos de usuarios, objetos, eventos e informes con sus propios sistemas empresariales.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon-container"><img src="./images/feat_api.png" alt="API"></div>
+                        <h3>Integración API</h3>
+                        <p>API HTTP robusta para integrar los datos de seguimiento con sus propios sistemas empresariales.</p>
                     </div>
-                </div>
 
+                </div>
             </div>
         </section>
 
         <!-- Why Choose Us Section -->
-        <section id="nosotros" style="padding: 6rem 0; background-color: var(--bg-light-gray);">
+        <section id="nosotros" style="padding: 3rem 0; background-color: var(--bg-light-gray);">
             <div class="container">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
                     <div>
@@ -893,7 +848,7 @@
         </section>
 
         <!-- How It Works Section -->
-        <section id="como-funciona" class="architecture-section" style="background-color: var(--bg-white); padding-bottom: 10rem;">
+        <section id="como-funciona" class="architecture-section" style="background-color: var(--bg-white); padding-bottom: 5rem; padding-top: 3rem;">
             <div class="container">
                 <h2 class="section-title">¿Cómo funciona?</h2>
                 

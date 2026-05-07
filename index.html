@@ -425,13 +425,7 @@
         .feature-image img {
             width: 100%;
             border-radius: 12px;
-            /* Faded edges effect */
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%), 
-                        linear-gradient(to right, black 85%, transparent 100%),
-                        linear-gradient(to left, black 85%, transparent 100%),
-                        linear-gradient(to top, black 85%, transparent 100%);
-            mask-composite: intersect;
-            -webkit-mask-image: radial-gradient(circle, black 90%, transparent 100%);
+            box-shadow: var(--shadow-sm);
         }
 
         .feature-text {
